@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Antox
 =====
 
@@ -41,3 +42,16 @@ To install on F-Droid, add https://pkg.tox.chat/fdroid/repo and search for "Anto
 *The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License.*
 
 *This repository resembles but is legally distinct from [astonex/Antox](https://github.com/Astonex/Antox) and the Lollipop Guild.*
+=======
+# tox
+# Antox
+# Kihao
+# Kihao
+# Kihao
+# wangwang
+# wangwang
+# wangwang
+# wangwang
+# wangwang
+# tox
+>>>>>>> 6484f9037947924b408e4196dc0f7c3dc43de0df
