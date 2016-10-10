@@ -5,5 +5,5 @@
             <solid android:color="@color/white"/>
         </shape>
     </item>
-    <item android:drawable="@drawable/ic_account_circle_grey_400_48dp"/>
+    <item android:drawable="@drawable/default_ic_account"/>
 </layer-list>

@@ -13,6 +13,7 @@ import chat.tox.antox.R
 import chat.tox.antox.data.State
 import chat.tox.antox.tox.ToxService
 
+
 import scala.collection.JavaConversions._
 
 class LoginActivity extends AppCompatActivity with AdapterView.OnItemSelectedListener {
@@ -51,7 +52,7 @@ class LoginActivity extends AppCompatActivity with AdapterView.OnItemSelectedLis
       val startTox = new Intent(getApplicationContext, classOf[ToxService])
       getApplicationContext.startService(startTox)
 
-      val main = new Intent(getApplicationContext, classOf[MainActivity])
+      val main = new Intent(getApplicationContext, classOf[Main3Activity])
       startActivity(main)
       finish()
     } else {
@@ -92,7 +93,7 @@ class LoginActivity extends AppCompatActivity with AdapterView.OnItemSelectedLis
         State.login(account, this)
         val startTox = new Intent(getApplicationContext, classOf[ToxService])
         getApplicationContext.startService(startTox)
-        val main = new Intent(getApplicationContext, classOf[MainActivity])
+        val main = new Intent(getApplicationContext, classOf[Main3Activity])
         startActivity(main)
         finish()
       } else {

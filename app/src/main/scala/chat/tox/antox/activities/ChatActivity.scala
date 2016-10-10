@@ -6,6 +6,7 @@ import java.util.Date
 
 import android.app.Activity
 import android.content.{Context, Intent}
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.{Build, Bundle, Environment}
 import android.provider.MediaStore
@@ -36,9 +37,9 @@ class ChatActivity extends GenericChatActivity[FriendKey] {
   override def onCreate(savedInstanceState: Bundle): Unit = {
     super.onCreate(savedInstanceState)
     val thisActivity = this
-
     getSupportActionBar.setDisplayHomeAsUpEnabled(true)
-    ThemeManager.applyTheme(this, getSupportActionBar)
+    ThemeManager.applyTheme(this, getSupportActionBar)   //设置actionbar颜色的调用方法
+//    getSupportActionBar.setBackgroundDrawable(new ColorDrawable(R.color.green_darker))
 
     this.findViewById(R.id.info).setVisibility(View.GONE)
 
@@ -76,7 +77,7 @@ class ChatActivity extends GenericChatActivity[FriendKey] {
         }
 
         val cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE)
-        val image_name = "Antoxpic " + new SimpleDateFormat("hhmm").format(new Date()) + " "
+        val image_name = "WangWangpic " + new SimpleDateFormat("hhmm").format(new Date()) + " "             //照片的存储路径  Antoxpic
 
         val storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
         try {
@@ -105,7 +106,6 @@ class ChatActivity extends GenericChatActivity[FriendKey] {
       }
     })
   }
-
   override def onSaveInstanceState(savedInstanceState: Bundle): Unit = {
     super.onSaveInstanceState(savedInstanceState)
 

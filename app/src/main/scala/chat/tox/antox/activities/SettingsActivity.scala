@@ -51,6 +51,7 @@ class SettingsActivity extends BetterPreferenceActivity with Preference.OnPrefer
     getSupportActionBar.setDisplayHomeAsUpEnabled(true)
     ThemeManager.applyTheme(this, getSupportActionBar)
 
+    //修改布局颜色
     themeDialog = new ColorPickerDialog(this, new ColorPickerDialog.Callback {
       override def onColorSelection(index: Int, color: Int, darker: Int): Unit = {
         ThemeManager.primaryColor = color
@@ -59,7 +60,7 @@ class SettingsActivity extends BetterPreferenceActivity with Preference.OnPrefer
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
           // it's a shame this can't be
           // used to recreate this activity and still change the theme
-          val i = new Intent(getApplicationContext, classOf[MainActivity])
+          val i = new Intent(getApplicationContext, classOf[Main3Activity])
           i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
           finish()
           startActivity(i)
@@ -119,7 +120,7 @@ class SettingsActivity extends BetterPreferenceActivity with Preference.OnPrefer
       }
     }
     if (key == "locale") {
-      val intent = new Intent(getApplicationContext, classOf[MainActivity])
+      val intent = new Intent(getApplicationContext, classOf[Main3Activity])
       intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
       finish()
       startActivity(intent)

@@ -3,6 +3,7 @@ package chat.tox.antox.activities
 import java.util
 
 import android.content.{Intent, Context}
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.v7.app.{ActionBar, AppCompatActivity}
 import android.support.v7.widget.RecyclerView.OnScrollListener
@@ -58,13 +59,14 @@ abstract class GenericChatActivity[KeyType <: ContactKey] extends AppCompatActiv
     actionBar.setCustomView(avatarView)
     actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM)
     ThemeManager.applyTheme(this, getSupportActionBar)
+ //   getSupportActionBar.setBackgroundDrawable(new ColorDrawable(R.color.green_darker))
 
     val extras: Bundle = getIntent.getExtras
     activeKey = getKey(extras.getString("key"))
     fromNotifications = extras.getBoolean("notification", false)
     val thisActivity = this
 
-    AntoxLog.debug("key = " + activeKey)
+    AntoxLog.debug("key = " + activeKey,AntoxLog.DEFAULT_TAG)
 
     val db = State.db
     adapter = new ChatMessagesAdapter(this,
@@ -233,7 +235,7 @@ abstract class GenericChatActivity[KeyType <: ContactKey] extends AppCompatActiv
 
   override def onBackPressed(): Unit = {
     if (fromNotifications) {
-      val main = new Intent(this, classOf[MainActivity])
+      val main = new Intent(this, classOf[Main3Activity])
       main.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK)
       startActivity(main)
     } else {

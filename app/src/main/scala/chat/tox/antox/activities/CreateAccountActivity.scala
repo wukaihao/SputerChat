@@ -88,7 +88,7 @@ class CreateAccountActivity extends AppCompatActivity {
     // Start the activity
     val startTox = new Intent(getApplicationContext, classOf[ToxService])
     getApplicationContext.startService(startTox)
-    val main = new Intent(getApplicationContext, classOf[MainActivity])
+    val main = new Intent(getApplicationContext, classOf[Main3Activity])
     startActivity(main)
     setResult(Activity.RESULT_OK)
 

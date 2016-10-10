@@ -74,6 +74,7 @@ abstract class AbstractContactsFragment extends Fragment with OnItemClickListene
       val parser = getResources.getXml(R.color.fab_colors_list)
       fab.setBackgroundTintList(ColorStateList.createFromXml(getResources, parser))
       rootView.findViewById(R.id.fab).setVisibility(View.VISIBLE)
+//      rootView.findViewById(R.id.fab).setVisibility(View.GONE)
     } else {
       rootView.findViewById(R.id.fab).setVisibility(View.GONE)
     }

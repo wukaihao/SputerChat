@@ -1,10 +1,13 @@
 package chat.tox.antox.fragments
 
+import java.util
+
 import android.os.Bundle
 import android.view.{LayoutInflater, View, ViewGroup}
 import chat.tox.antox.R
 import chat.tox.antox.adapters.ContactListAdapter
-import chat.tox.antox.utils.{LeftPaneItem, TimestampUtils}
+import chat.tox.antox.applaction.MyApplaction
+import chat.tox.antox.utils.{AntoxLog, LeftPaneItem, TimestampUtils}
 import chat.tox.antox.wrapper.{FriendInfo, FriendRequest, GroupInfo, GroupInvite}
 import im.tox.tox4j.core.enums.ToxUserStatus
 
@@ -21,6 +24,14 @@ class ContactsFragment extends AbstractContactsFragment(showSearch = true, showF
         updateGroupList(leftPaneAdapter, groupList)
 
         contactsListView.setAdapter(leftPaneAdapter)
+//        AntoxLog.debug(friendsList+"",AntoxLog.DEFAULT_TAG)
+
+        val list=new util.ArrayList[FriendInfo]()
+        for(friendinfo <-friendsList){
+          list.add(friendinfo)
+//          AntoxLog.debug(list+"",AntoxLog.DEFAULT_TAG)
+        }
+        MyApplaction.getIntance.setFriendInfoList(list)
     }
   }
 

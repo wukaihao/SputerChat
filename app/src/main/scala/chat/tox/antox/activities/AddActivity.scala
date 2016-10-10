@@ -10,11 +10,12 @@ import chat.tox.QR.IntentIntegrator
 import chat.tox.antox.R
 import chat.tox.antox.fragments.{AddPaneFragment, InputableID}
 import chat.tox.antox.theme.ThemeManager
+import chat.tox.antox.utils.AntoxLog
 
 class AddActivity extends AppCompatActivity {
 
   var context: Context = _
-
+  var code:String=_
   override def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
 
@@ -40,6 +41,35 @@ class AddActivity extends AppCompatActivity {
           .asInstanceOf[AddPaneFragment].getSelectedFragment
       }
     }
+
+    val intent1=getIntent;
+    code=intent1.getStringExtra("code")
+//    AntoxLog.debug(code)
+//    val code1=code.substring(code.indexOf(":")+1,code.length)
+//    if (code != null) {
+//        getSupportFragmentManager
+//          .findFragmentById(R.id.fragment_add_pane)
+//          .asInstanceOf[AddPaneFragment]
+//          .getSelectedFragment
+//          .asInstanceOf[InputableID]
+//          .inputID(code)
+//
+//    }
+
+  }
+
+  override def onWindowFocusChanged(hasFocus: Boolean): Unit = {
+    if(hasFocus){
+          if (code != null) {
+              getSupportFragmentManager
+                .findFragmentById(R.id.fragment_add_pane)
+                .asInstanceOf[AddPaneFragment]
+                .getSelectedFragment
+                .asInstanceOf[InputableID]
+                .inputID(code)
+
+          }
+    }
   }
 
   override def onPause(): Unit = {
@@ -54,6 +84,7 @@ class AddActivity extends AppCompatActivity {
 
   override def onActivityResult(requestCode: Int, resultCode: Int, intent: Intent) {
     val scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent)
+    AntoxLog.debug(scanResult.getContents)
     if (scanResult != null) {
       if (scanResult.getContents != null) {
         getSupportFragmentManager

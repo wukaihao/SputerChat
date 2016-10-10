@@ -26,10 +26,10 @@ apply plugin: "jp.leafytree.android-scala"
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '22.0.1'
+    buildToolsVersion '23.0.1'
 
     defaultConfig {
-        minSdkVersion 9
+        minSdkVersion 15
         targetSdkVersion 23
         testInstrumentationRunner "android.test.InstrumentationTestRunner"
         applicationId "chat.tox.antox"
@@ -71,6 +71,15 @@ dependencies {
     compile files('libs/dnsjava-2.1.6.jar')
     compile files('libs/kalium-jni-1.0.0-SNAPSHOT.jar')
     compile files('libs/tox4j_2.11.jar')
+    compile files('libs/commons-imaging-1.0-20150518.202342-66.jar')
+//    compile files('libs/barcode_core.jar')
+    compile files('libs/xUtils-2.3.6.jar')
+
+    compile files('libs/android_volley.jar')
+    compile files('libs/universal-image-loader-1.9.4.jar')
+//    compile files('libs/gson-2.2.4.jar')
+
+    compile 'cn.trinea.android.common:trinea-android-common:4.2.15'
     compile 'org.scala-lang:scala-library:2.11.7'
     compile 'org.scaloid:scaloid_2.11:3.6.1-10'
     compile 'com.typesafe.scala-logging:scala-logging_2.11:3.1.0'
@@ -78,7 +87,7 @@ dependencies {
     compile 'org.scalaz:scalaz-core_2.11:7.2.0-M1'
     compile 'org.scodec:scodec-core_2.11:1.8.2'
 
-    compile 'org.apache.commons:commons-imaging:1.0-SNAPSHOT'
+//    compile 'org.apache.commons:commons-imaging:1.0-SNAPSHOT'
 
     compile 'com.android.support:design:23.0.1'
     compile 'com.android.support:recyclerview-v7:23.0.1'
@@ -90,8 +99,8 @@ dependencies {
     compile 'io.reactivex:rxscala_2.11:0.25.0'
     compile 'com.squareup.sqlbrite:sqlbrite:0.4.0'
     compile 'com.squareup.retrofit:retrofit:1.9.0'
-    compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
-    compile 'com.squareup.okhttp:okhttp:2.0.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.4.0'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
 
     compile 'com.intellij:annotations:12.0'
     compile 'de.hdodenhof:circleimageview:1.2.2'

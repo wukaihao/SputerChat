@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="white_absolute">#ffffff</color>
-    <color name="white">#f3f3f3</color>
+    <!--<color name="white">#f3f3f3</color>-->
     <color name="grey_light">#EAEAEA</color>
     <color name="grey">#dcdcdc</color>
     <color name="grey_dark">@android:color/darker_gray</color>
@@ -40,4 +40,11 @@
     <color name="tab_selected">@color/white</color>
     <color name="tab_highlight">#aaaaaaaa</color>
 
+
+    <!-- drop down list header font color -->
+    <color name="drop_down_list_header_font_color">#000000</color>
+    <!-- drop down list header second font color -->
+    <color name="drop_down_list_header_second_font_color">#000000</color>
+    <!-- drop down list footer font color -->
+    <color name="drop_down_list_footer_font_color">#000000</color>
 </resources>

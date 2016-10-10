@@ -9,6 +9,8 @@ import android.preference.PreferenceManager
 import android.support.v7.app.ActionBar
 import chat.tox.antox.R
 
+
+//布局颜色设置
 object ThemeManager {
 
   private var _primaryColor: Int = _
@@ -21,7 +23,6 @@ object ThemeManager {
     _primaryColor = preferences.getInt("theme_color", context.getResources.getColor(R.color.brand_primary))
     _primaryColorDark = darkenColor(_primaryColor)
   }
-
   def darkenColor(color: Int): Int = {
     val hsv: Array[Float] = new Array[Float](3)
     Color.colorToHSV(color, hsv)

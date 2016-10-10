@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="chat.tox.antox"
-    android:versionCode="47"
-    android:versionName="0.23" >
+    android:versionCode="48"
+    android:versionName="0.24" >
 
     <uses-sdk
         android:minSdkVersion="9"
@@ -19,11 +19,13 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
-    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
 
     <instrumentation
         android:name="android.test.InstrumentationTestRunner"
-        android:targetPackage="chat.tox.antox"/>
+        android:targetPackage="chat.tox.antox" />
 
     <supports-screens
         android:anyDensity="true"
@@ -32,57 +34,64 @@
         android:resizeable="true"
         android:smallScreens="true" />
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
+        android:name=".applaction.MyApplaction"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:logo="@drawable/ic_actionbar"
+        android:logo="@drawable/logo"
         android:theme="@style/AntoxTheme" >
         <service
-            android:name="chat.tox.antox.tox.ToxService"
+            android:name=".tox.ToxService"
             android:exported="false"
             android:label="Antox" />
 
-        <receiver android:name="chat.tox.antox.utils.BootReceiver">
+        <receiver android:name=".utils.BootReceiver" >
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
         <activity
-            android:name="chat.tox.antox.activities.MainActivity"
+            android:name=".activities.MainActivity"
             android:configChanges="orientation|screenSize"
             android:theme="@style/AntoxTheme.ActionBar"
-            android:windowSoftInputMode="stateAlwaysHidden">
-        </activity>
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name="chat.tox.antox.activities.LoginActivity"
+            android:name=".activities.LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Translucent" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
+            android:name=".activities.HuabeiActivity"
+            android:label="@string/title_activity_huabei" >
+        </activity>
+        <activity
             android:name=".activities.ChatActivity"
-            android:windowSoftInputMode="stateHidden|adjustResize"
-            android:parentActivityName="chat.tox.antox.activities.MainActivity">
+            android:parentActivityName=".activities.MainActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="chat.tox.antox.activities.MainActivity" />
         </activity>
         <activity
-            android:name="chat.tox.antox.activities.GroupChatActivity"
-            android:parentActivityName="chat.tox.antox.activities.MainActivity">
+            android:name=".activities.GroupChatActivity"
+            android:parentActivityName=".activities.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="chat.tox.antox.activities.MainActivity" />
         </activity>
         <activity
-            android:name="chat.tox.antox.activities.AddActivity"
+            android:name=".activities.AddActivity"
             android:label="@string/title_activity_add" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -106,9 +115,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="chat.tox.antox.activities.MainActivity" />
         </activity>
-
         <activity
-            android:name="chat.tox.antox.activities.GroupProfileActivity"
+            android:name=".activities.GroupProfileActivity"
             android:label="@string/title_activity_group_profile"
             android:windowSoftInputMode="stateAlwaysHidden" >
             <meta-data
@@ -125,18 +133,58 @@
         </receiver>
 
         <activity
-            android:name="chat.tox.antox.activities.CreateAccountActivity"
+            android:name=".activities.CreateAccountActivity"
             android:label="@string/title_activity_create_account"
             android:screenOrientation="portrait" />
         <activity
-            android:name="chat.tox.antox.activities.ProfileSettingsActivity"
+            android:name=".activities.ProfileSettingsActivity"
             android:label="@string/title_activity_profile_settings" />
         <activity
-            android:name="chat.tox.antox.activities.AboutActivity"
+            android:name=".activities.AboutActivity"
             android:label="@string/about" />
         <activity
-            android:name="chat.tox.antox.activities.SettingsActivity"
+            android:name=".activities.SettingsActivity"
             android:label="@string/title_activity_settings" />
+        <activity
+            android:name="wangwang.activity.CreateAccountActivity"
+            android:label="@string/title_activity_create_account" >
+        </activity>
+        <activity
+            android:name=".activities.MainActivity2"
+            android:label="@string/title_activity_main2" >
+        </activity>
+        <activity
+            android:name=".activities.LoginActivity1"
+            android:label="@string/title_activity_login1" >
+        </activity>
+        <activity
+            android:name=".activities.CreateAccountActivity4"
+            android:label="@string/title_activity_create_account4" >
+        </activity>
+        <activity
+            android:name=".activities.Main3Activity"
+            android:label="@string/title_activity_main3" >
+        </activity>
+        <activity
+            android:name=".activities.UserSettingsActivity"
+            android:label="@string/title_activity_user_settings" >
+        </activity>
+        <activity
+            android:name=".activities.SettingsActivity1"
+            android:label="@string/title_activity_settings1" >
+        </activity>
+        <activity
+            android:name=".activities.AddActivity1"
+            android:label="@string/title_activity_add1" >
+        </activity>
+        <activity
+            android:name=".activities.Main4Activity"
+            android:label="@string/title_activity_main4" >
+        </activity>
+        <activity
+            android:name=".activities.PublishActivity"
+            android:label="@string/title_activity_publish" >
+        </activity>
     </application>
 
 </manifest>

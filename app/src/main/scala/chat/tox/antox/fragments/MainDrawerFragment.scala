@@ -10,7 +10,7 @@ import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.view.View.OnClickListener
 import android.view.{LayoutInflater, MenuItem, View, ViewGroup}
-import android.widget.{TextView, Toast}
+import android.widget.{ TextView, Toast}
 import chat.tox.antox.R
 import chat.tox.antox.activities.{AboutActivity, ProfileSettingsActivity, SettingsActivity}
 import chat.tox.antox.callbacks.AntoxOnSelfConnectionStatusCallback

@@ -15,7 +15,7 @@ import chat.tox.antox.fragments.ContactItemType
 import chat.tox.antox.tox.ToxSingleton
 import chat.tox.antox.utils.{IconColor, _}
 import chat.tox.antox.wrapper.{GroupKey, FriendKey, ContactKey}
-import de.hdodenhof.circleimageview.CircleImageView
+//import de.hdodenhof.circleimageview.CircleImageView
 import rx.lang.scala.Subscription
 
 import scala.collection.JavaConversions._
@@ -32,7 +32,7 @@ object ContactListAdapter {
 
     var favorite: ImageView = _
 
-    var avatar: CircleImageView = _
+    var avatar: ImageView = _
 
     var countText: TextView = _
 
@@ -97,7 +97,7 @@ class ContactListAdapter(private var context: Context) extends BaseAdapter with 
           holder.secondText = newConvertView.findViewById(R.id.contact_status).asInstanceOf[TextView]
           holder.icon = newConvertView.findViewById(R.id.icon).asInstanceOf[TextView]
           holder.favorite = newConvertView.findViewById(R.id.star).asInstanceOf[ImageView]
-          holder.avatar = newConvertView.findViewById(R.id.avatar).asInstanceOf[CircleImageView]
+          holder.avatar = newConvertView.findViewById(R.id.avatar).asInstanceOf[ImageView]
           holder.countText = newConvertView.findViewById(R.id.unread_messages_count).asInstanceOf[TextView]
           holder.timeText = newConvertView.findViewById(R.id.last_message_timestamp).asInstanceOf[TextView]
       }

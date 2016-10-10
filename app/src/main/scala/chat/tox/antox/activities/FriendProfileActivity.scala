@@ -11,13 +11,13 @@ import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AppCompatActivity
 import android.text.{Editable, TextWatcher}
 import android.view.View
-import android.widget.{EditText, TextView}
+import android.widget.{ImageView, EditText, TextView}
 import chat.tox.antox.R
 import chat.tox.antox.data.State
 import chat.tox.antox.theme.ThemeManager
 import chat.tox.antox.utils.BitmapManager
 import chat.tox.antox.wrapper.FriendKey
-import de.hdodenhof.circleimageview.CircleImageView
+//import de.hdodenhof.circleimageview.CircleImageView
 
 class FriendProfileActivity extends AppCompatActivity {
 
@@ -65,7 +65,8 @@ class FriendProfileActivity extends AppCompatActivity {
 
     val avatar = getIntent.getSerializableExtra("avatar").asInstanceOf[Option[File]]
     avatar.foreach(avatar => {
-      val avatarHolder = findViewById(R.id.avatar).asInstanceOf[CircleImageView]
+//      val avatarHolder = findViewById(R.id.avatar).asInstanceOf[CircleImageView]
+      val avatarHolder = findViewById(R.id.avatar).asInstanceOf[ImageView]
       BitmapManager.load(avatar, isAvatar = true).foreach(avatarHolder.setImageBitmap)
     })
 
@@ -74,7 +75,7 @@ class FriendProfileActivity extends AppCompatActivity {
 
   override def onBackPressed() {
     super.onBackPressed()
-    val intent = new Intent(FriendProfileActivity.this, classOf[MainActivity])
+    val intent = new Intent(FriendProfileActivity.this, classOf[Main3Activity])
     intent.addCategory(Intent.CATEGORY_HOME)
     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
     FriendProfileActivity.this.startActivity(intent)
@@ -104,7 +105,6 @@ class FriendProfileActivity extends AppCompatActivity {
   def updateFab(favorite: Boolean): Unit = {
     val fab = findViewById(R.id.favorite_button).asInstanceOf[FloatingActionButton]
     fab.setBackgroundTintList(ColorStateList.valueOf(getResources.getColor(if (favorite) R.color.material_red_a700 else R.color.white)))
-
     if (favorite) {
       val drawable = getResources.getDrawable(R.drawable.ic_star_black_24dp)
       drawable.setColorFilter(R.color.brand_primary, PorterDuff.Mode.MULTIPLY)
