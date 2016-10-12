@@ -9,28 +9,31 @@ import android.preference.PreferenceManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.view.Window;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
+import android.widget.Toast;
 
 import java.util.Locale;
 
 import chat.tox.antox.R;
 import chat.tox.antox.theme.ThemeManager;
-import cn.trinea.android.common.view.DropDownListView;
 import wangwang.adapter.FragmentAdapter;
+import wangwang.entity.SlidingMenuView;
 
 
 /*
 * @主界面
 * */
 public class Main3Activity extends AppCompatActivity {
+
+    private SlidingMenuView slideMenu1;
 
     SharedPreferences preferences;
     private Locale locale=null;
@@ -55,7 +58,10 @@ public class Main3Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-        
+
+        slideMenu1 = (SlidingMenuView) findViewById(R.id.slideMenu1);
+
+
         preferences= PreferenceManager.getDefaultSharedPreferences(this);//设置
         selectLanguage();
         ThemeManager.init(getApplicationContext());//actionBar初始化颜色
@@ -63,12 +69,36 @@ public class Main3Activity extends AppCompatActivity {
         ThemeManager.applyTheme(this, getSupportActionBar());//修改actionBar背景
 
         mAdapter = new FragmentAdapter(getSupportFragmentManager());
-        bindViews();
+        bindViews(); //绑定底部五个按钮按钮
         rb_channel.setChecked(true);
 
+        //提示当前菜单栏状态（open or close）
+        slideMenu1.setOnStatusListener(new SlidingMenuView.OnStatusListener() {
+            @Override
+            public void statusChanged(SlidingMenuView.Status status) {
+                if (status == SlidingMenuView.Status.Open) {
+                    Toast.makeText(Main3Activity.this, "Open", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(Main3Activity.this, "Close", Toast.LENGTH_SHORT).show();
+                }
 
+            }
+        });
 
     }
+
+    //用户界面中 打开菜单栏对应的按钮
+    public void user_setting (View v){
+        slideMenu1.toggle();
+
+    }
+
+    //侧划界面中 设置按钮对应的事件
+    public void sliding_setting (View v){
+        Intent intent = new Intent(this, SettingsActivity1.class);
+        startActivity(intent);
+    }
+
 
     //修改语言
     private void selectLanguage(){
@@ -102,6 +132,7 @@ public class Main3Activity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //底部五个按钮 与 对应的Viewpage子项 绑定
     private void bindViews() {
         rg_tab_bar = (RadioGroup) findViewById(R.id.rg_tab_bar);
         rb_channel = (RadioButton) findViewById(R.id.rb_channel);
@@ -114,19 +145,24 @@ public class Main3Activity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.rb_channel:
+                        Log.d("ViewPage第1子项","第一个Fragment") ;
                         viewPager.setCurrentItem(PAGE_ONE);
                         break;
                     case R.id.rb_message:
                         viewPager.setCurrentItem(PAGE_TWO);
+                        Log.d("ViewPage第2子项","第二个Fragment") ;
                         break;
                     case R.id.rb_friends:
                         viewPager.setCurrentItem(PAGE_THREE);
+                        Log.d("ViewPage第3子项","第三个Fragment") ;
                         break;
                     case R.id.rb_better:
                         viewPager.setCurrentItem(PAGE_FOUR);
+                        Log.d("ViewPage第4子项","第四个Fragment") ;
                         break;
                     case R.id.rb_setting:
                         viewPager.setCurrentItem(PAGE_FIVE);
+                        Log.d("ViewPage第5子项","第五个Fragment") ;
                         break;
 
                 }
@@ -147,6 +183,7 @@ public class Main3Activity extends AppCompatActivity {
 
             }
 
+            //对应的Viewpage子项 与 底部五个按钮 绑定
             @Override
             public void onPageScrollStateChanged(int state) {
                 if (state == 2) {

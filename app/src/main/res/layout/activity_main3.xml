@@ -1,97 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="chat.tox.antox.activities.Main3Activity">
 
-    <!--<RelativeLayout-->
-        <!--android:id="@+id/re_first_menu"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="48dp"-->
-        <!--android:background="#c1000000">-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/text_first_title"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_marginLeft="16dp"-->
-            <!--android:gravity="center"-->
-            <!--android:text="@string/app_name"-->
-            <!--android:textColor="#ffffff"-->
-            <!--android:textSize="24sp" />-->
-        <!--&lt;!&ndash;<ImageButton&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_width="70dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:id="@+id/imagebt_first_search"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:background="@drawable/add"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_alignParentTop="true"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_alignParentRight="true"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_alignParentEnd="true" />&ndash;&gt;-->
-        <!--&lt;!&ndash;<ImageButton&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_width="70dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:id="@+id/imagebt_first_menus"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:background="@drawable/search"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_alignParentTop="true"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_toLeftOf="@+id/imagebt_first_search"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_toStartOf="@+id/imagebt_first_search"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_marginRight="5dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_marginEnd="10dp" />&ndash;&gt;-->
-    <!--</RelativeLayout>-->
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/view_first_layout"
+    <wangwang.entity.SlidingMenuView
+        android:id="@+id/slideMenu1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/re_first_menu"
-        android:layout_marginBottom="58dp">
+        android:layout_height="match_parent" >
 
-    </android.support.v4.view.ViewPager>
+        <!-- 菜单界面的布局 -->
+        <include layout="@layout/activity_main3_slidermenu" />
 
-    <RadioGroup
-        android:id="@+id/rg_tab_bar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="2dp"
-        android:background="#ffffff"
-        android:orientation="horizontal">
+        <!-- 主界面的布局 -->
+        <include layout="@layout/activity_main3_content" />
 
-        <RadioButton
-            android:id="@+id/rb_channel"
-            style="@style/tab_menu_item"
-            android:drawableTop="@drawable/tab_menu_channel"
-            android:text="@string/tab_menu_alert" />
+    </wangwang.entity.SlidingMenuView>
 
-        <RadioButton
-            android:id="@+id/rb_message"
-            style="@style/tab_menu_item"
-            android:drawableTop="@drawable/tab_menu_message"
-            android:text="@string/tab_menu_profile" />
-
-        <RadioButton
-            android:id="@+id/rb_friends"
-            style="@style/tab_menu_item"
-            android:drawableTop="@drawable/tab_menu_friends"
-            android:text="@string/tab_menu_friends" />
-
-        <RadioButton
-            android:id="@+id/rb_better"
-            style="@style/tab_menu_item"
-            android:drawableTop="@drawable/tab_menu_better"
-            android:text="@string/tab_menu_pay" />
-
-        <RadioButton
-            android:id="@+id/rb_setting"
-            style="@style/tab_menu_item"
-            android:drawableTop="@drawable/tab_menu_setting"
-            android:text="@string/tab_menu_setting" />
-
-    </RadioGroup>
 </RelativeLayout>

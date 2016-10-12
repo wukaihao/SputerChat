@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_gray">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#293e8c">
+
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:gravity="center_vertical"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/history_right_pointer"
+                android:id="@+id/mySetting"
+                android:onClick="user_setting"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#ffffff"
+            android:clickable="false"
+            android:paddingTop="5dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:elevation="4dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/user_top_image" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:text="hi@gnzlt.com"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+        </RelativeLayout>
+
+
+        <ListView
+            android:id="@+id/userFragment_listView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="#ffffff"
+            android:divider="@drawable/list_view_line"
+            android:dividerHeight="1dp">
+        </ListView>
+        <ListView
+            android:id="@+id/userFragment_listView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="#ffffff"
+            android:divider="@drawable/list_view_line"
+            android:dividerHeight="1dp">
+        </ListView>
+        <ListView
+            android:id="@+id/userFragment_listView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="#ffffff"
+            android:divider="@drawable/list_view_line"
+            android:dividerHeight="1dp">
+        </ListView>
+
+    </LinearLayout>
+
+</ScrollView>
+

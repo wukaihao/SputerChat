@@ -1,14 +1,167 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.wangwang.wangwang.fragment.MessageFragment">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/contact_list"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white_absolute"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <ListView
+    <LinearLayout
+        android:id="@+id/contact_search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/list_message_list">
+        android:orientation="horizontal">
 
-    </ListView>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/padding_small"
+            android:src="@drawable/ic_action_search"/>
 
-</FrameLayout>
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_medium"
+            android:background="@color/white_absolute"
+            android:hint="@string/search_all_contacts"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey_darker"
+            android:typeface="normal"
+            android:windowSoftInputMode="stateHidden"/>
+        <ImageView
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/contacts_add"
+            android:scaleType="center"
+            android:onClick="onClickAdd"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/line_choose"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="全部"
+            android:background="#ffffff"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/button_all"
+            android:clickable="true"
+            android:layout_gravity="center"
+            android:onClick="updateFriendsList"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text="在線"
+            android:background="#ffffff"
+            android:layout_marginRight="20dp"
+            android:id="@+id/button_online"
+            android:clickable="true"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="消息请求"
+            android:drawableLeft="@drawable/address_news"
+            android:gravity="center_vertical"
+            android:drawablePadding="20dp"
+            android:id="@+id/text_requestmessage"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="扫描印章"
+            android:drawableLeft="@drawable/address_erweima"
+            android:gravity="center_vertical"
+            android:drawablePadding="20dp"
+            android:id="@+id/text_saomiao"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="查找手机通讯录"
+            android:drawableLeft="@drawable/address_addressbook"
+            android:gravity="center_vertical"
+            android:drawablePadding="20dp"
+            android:id="@+id/text_tongxunlu"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/center_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/main_recent_no"
+        android:textColor="@color/grey_darker"
+        android:textSize="@dimen/text_large"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/list_divider"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ListView
+            android:id="@+id/list_message_list"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white_absolute"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="@drawable/list_divider"
+            android:dividerHeight="0dp"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="true"/>
+        <wangwang.rewrite.SideBar
+            android:id="@+id/sidrbar"
+            android:layout_width="30.0dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="right|center"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="90dp"
+            android:layout_marginBottom="20dp"
+            />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

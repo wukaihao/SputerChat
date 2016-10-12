@@ -7,7 +7,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View.OnClickListener
 import android.view.{LayoutInflater, View, ViewGroup}
-import android.widget.{TextView, Button}
+import android.widget.{LinearLayout, TextView, Button}
 import chat.tox.antox.R
 import chat.tox.antox.activities.{Main4Activity, GroupChatActivity}
 import chat.tox.antox.adapters.ContactListAdapter
