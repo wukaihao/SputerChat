@@ -9,7 +9,7 @@ import chat.tox.antox.adapters.ContactListAdapter
 import chat.tox.antox.utils.{LeftPaneItem, TimestampUtils}
 import chat.tox.antox.wrapper._
 
-class RecentFragment extends AbstractContactsFragment(showSearch = false, showFab = false) {
+class RecentFragment extends AbstractMessageFragment(showSearch = true, showFab = true) {
 
   override def updateContacts(contactInfoTuple: (Seq[FriendInfo], Seq[FriendRequest],
     Seq[GroupInvite], Seq[GroupInfo])) {
