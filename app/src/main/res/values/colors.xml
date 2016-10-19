@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="status">#010101</color>
     <color name="grey_search">#E1E1E2</color>
     <color name="grey_edittext">#A2A2A2</color>
     <color name="white_title">#F9F9F9</color>

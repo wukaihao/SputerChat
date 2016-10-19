@@ -43,7 +43,8 @@
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:logo="@drawable/logo"
-        android:theme="@style/AntoxTheme" >
+        android:theme="@style/AntoxTheme"
+        >
         <service
             android:name=".tox.ToxService"
             android:exported="false"

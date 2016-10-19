@@ -38,7 +38,7 @@ class RecentFragment extends AbstractMessageFragment(showSearch = true, showFab 
         } else {
           ContactItemType.FRIEND
         }
-
+//Item
         val lastMessage = contact.lastMessage.get
         val contactPaneItem = new LeftPaneItem(itemType, contact.key, contact.avatar, contact.getDisplayName, lastMessage.toNotificationFormat(getActivity),
           contact.online, UserStatus.getToxUserStatusFromString(contact.status), contact.favorite, contact.unreadCount,

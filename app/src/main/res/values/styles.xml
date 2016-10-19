@@ -1,7 +1,12 @@
 <resources>
 
+    <style name="statusBarStyle" parent="@android:style/Theme.DeviceDefault.Light">
+        <item name="android:statusBarColor">@color/status</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
     <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="colorAccent">@color/black</item>
+        <item name="colorAccent">@color/white_title</item>
         <item name="android:background">@color/white</item>
     </style>
 
@@ -17,7 +22,7 @@
 
     <!-- ActionBar styles -->
     <style name="AntoxTheme.ActionBar"
-        parent="@style/Theme.AppCompat.NoActionBar">
+        parent="@style/Theme.AppCompat.Light.DarkActionBar">
         <!-- colorPrimaryDark is used for the status bar -->
         <item name="colorPrimary">@color/brand_primary</item>
         <item name="colorPrimaryDark">@color/brand_primary_dark</item>
