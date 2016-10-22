@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--suppress ALL -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="chat.tox.antox"
@@ -144,6 +145,7 @@
         <activity
             android:name=".activities.SettingsActivity"
             android:label="@string/title_activity_settings" />
+        <!--suppress AndroidDomInspection, AndroidDomInspection, AndroidDomInspection, AndroidDomInspection -->
         <activity
             android:name="wangwang.activity.CreateAccountActivity"
             android:label="@string/title_activity_create_account"></activity>
