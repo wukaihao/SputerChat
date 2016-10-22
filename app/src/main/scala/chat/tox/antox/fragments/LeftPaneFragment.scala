@@ -12,6 +12,7 @@ import chat.tox.antox.theme.ThemeManager
 import com.astuetz.PagerSlidingTabStrip
 import com.astuetz.PagerSlidingTabStrip.CustomTabProvider
 import com.balysv.materialripple.MaterialRippleLayout
+import wangwang.fragment.messagefragment.{MessageActivity, MsgRecordFragment}
 
 class LeftPaneFragment extends Fragment {
 
@@ -55,7 +56,7 @@ class LeftPaneFragment extends Fragment {
     }
 
     override def getItem(pos: Int): Fragment = pos match {
-      case 0 => new RecentFragment()
+      case 0 => new MsgRecordFragment
       case _ => new ContactsFragment()
     }
 

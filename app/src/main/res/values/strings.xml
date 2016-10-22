@@ -311,4 +311,5 @@
     <string name="title_activity_add1">AddActivity1</string>
     <string name="title_activity_main4">Main4Activity</string>
     <string name="title_activity_publish">PublishActivity</string>
+    <string name="title_activity_mainragment">Mainragment</string>
 </resources>

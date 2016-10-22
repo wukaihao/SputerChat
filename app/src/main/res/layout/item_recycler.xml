@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatar"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        />
+
+    <TextView
+        android:id="@+id/icon_recycler"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@color/green"
+        android:layout_alignRight="@+id/avatar"
+        android:layout_alignEnd="@+id/avatar"
+        android:layout_alignBottom="@id/avatar"/>
+    <TextView
+        android:id="@+id/tv_recycler_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/avatar"
+        android:gravity="center"
+        android:maxLines="1"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:maxWidth="60dp"
+        android:text="用户名" />
+
+</RelativeLayout>

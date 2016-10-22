@@ -11,12 +11,14 @@ import chat.tox.antox.wrapper._
 
 class RecentFragment extends AbstractMessageFragment(showSearch = true, showFab = true) {
 
+
+
   override def updateContacts(contactInfoTuple: (Seq[FriendInfo], Seq[FriendRequest],
     Seq[GroupInvite], Seq[GroupInfo])) {
     contactInfoTuple match {
       case (friendsList, friendRequests, groupInvites, groupList) =>
         leftPaneAdapter = new ContactListAdapter(getActivity)
-        updateContactsLists(leftPaneAdapter, friendsList ++ groupList)
+       updateContactsLists(leftPaneAdapter:ContactListAdapter, (friendsList ++ groupList):Seq[ContactInfo])
         contactsListView.setAdapter(leftPaneAdapter)
     }
   }
@@ -24,6 +26,7 @@ class RecentFragment extends AbstractMessageFragment(showSearch = true, showFab 
   override def onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle): View = {
     val rootView = super.onCreateView(inflater, container, savedInstanceState)
     rootView.findViewById(R.id.center_text).setVisibility(View.VISIBLE)
+
 
     rootView
   }

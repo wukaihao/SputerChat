@@ -34,7 +34,7 @@ class CreateAccountActivity extends AppCompatActivity {
 
   protected override def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
-    getSupportActionBar.hide()
+    //getSupportActionBar.hide()
     ThemeManager.applyTheme(this, getSupportActionBar)
 
     setContentView(R.layout.activity_create_account)

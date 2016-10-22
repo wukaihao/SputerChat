@@ -59,6 +59,7 @@ abstract class GenericChatActivity[KeyType <: ContactKey] extends AppCompatActiv
     //title实例化
     val actionBar = getSupportActionBar
     val avatarView = getLayoutInflater.inflate(R.layout.avatar_actionview, null)
+
     actionBar.setCustomView(avatarView)
     actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM)
     //ThemeManager设置主题

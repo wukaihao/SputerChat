@@ -10,6 +10,7 @@ import wangwang.fragment.FindFragment;
 import wangwang.fragment.FriendsFragment;
 import wangwang.fragment.MessageFragment;
 import wangwang.fragment.UserFragment;
+import wangwang.fragment.messagefragment.MsgRecordFragment;
 
 
 /**
@@ -18,7 +19,7 @@ import wangwang.fragment.UserFragment;
 public class FragmentAdapter extends FragmentPagerAdapter {
 
     private final int PAGER_COUNT = 5;
-    private MessageFragment myFragment1 = null;
+    private MsgRecordFragment myFragment1 = null;
     private ContactsFragment myFragment2 = null;
     private FriendsFragment myFragment3=null;
     private FindFragment myFragment4 = null;
@@ -26,9 +27,9 @@ public class FragmentAdapter extends FragmentPagerAdapter {
 
     public FragmentAdapter(FragmentManager fm) {
         super(fm);
-        myFragment1 = new MessageFragment();
+        myFragment1 = new MsgRecordFragment();
         myFragment2 = new ContactsFragment();
-        myFragment3= new FriendsFragment();
+        myFragment3 = new FriendsFragment();
         myFragment4 = new FindFragment();
         myFragment5 = new UserFragment();
     }

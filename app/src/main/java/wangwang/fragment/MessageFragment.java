@@ -17,11 +17,6 @@ import chat.tox.antox.fragments.RecentFragment;
  * A simple {@link Fragment} subclass.
  */
 public class MessageFragment extends RecentFragment {
+    
 
-    public MessageFragment(){}
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
-    }
 }
